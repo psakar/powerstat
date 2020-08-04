@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:           powerstat
-Version:        0.02.15
-Release:        2.1
+Version:        0.02.24
+Release:        1.0
 Summary:        Laptop power measuring tool
 License:        GPL-2.0
 Group:          System/Monitoring
@@ -31,6 +31,52 @@ make %{?_smp_mflags}
 %{_mandir}/man8/powerstat.8*
 
 %changelog
+* Tue Aug 04 2020 Petr Sakar <petr.sakar@chare.eu> - 0.02.24
+- update to version 0.02.24
+  * Makefile: bump version
+  * Debian/control: Add Rules-Requires-Root: no
+- update to version 0.02.23
+  * Makefile: bump minor version
+  * Debian: remove compat, use debhelper-compat in Build-Depends
+  * Makefile: respect standard prefix= variable (LP: #1877744)
+  * zero the ws struct to clear static analysis warnings
+- update to version 0.02.22
+  * Makefile: bump version
+  * Add bash command completion script
+- update to version 0.02.21
+  * Makefile: bump version
+  * Ensure strlen on new_name is safe
+  * file_get_uint64: ensure val is zero'd to fix static analysis warnings
+  * Ensure power stats in p2 are initialized, fixes read if uninitialized values
+  * Update copyright to 2020
+- update to version 0.02.20
+  * Makefile: bump version
+  * Debian: update to compat level 12
+  * Use snapcraft automatic versioning
+- update to version 0.02.19
+  * Makefile: bump version
+  * Update copyright year
+  * Make struct cpu_info pack more efficiently
+- update to version 0.02.18
+  * Makefile: bump version
+  * Rename snapcraft directory to snap, add .travis.yml file to dist rule
+  * Compute Geometric Mean without overflow with large sets of data
+  * Add travis yaml file
+- update to version 0.02.17
+  * Makefile: bump version
+  * voidify returns from log_printf call
+  * Make indices arrays const
+  * Make cpu_freq_scale const
+  * Add hint on how to run if not in "discharge" mode
+  * Add adjustable C-state column width for C-state name column
+  * snapcraft: make confinement strict
+  * snapcraft: add plugs
+- update to version 0.02.16
+  * Makefile: bump version
+  * debian/copyright: use secure https url
+  * debian/control: remove empty last line
+  * update debian/compat to 11
+  * Fix range of CPU frequencies histogram. Scale by 1000 and not 1e9
 * Thu Feb 22 2018 Wei-Lun Chao <bluebat@member.fsf.org> - 0.02.15
 - Rebuild for Fedora
 * Wed Jan 31 2018 mardnh@gmx.de
